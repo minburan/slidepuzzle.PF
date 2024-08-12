@@ -9,9 +9,22 @@ function Panel({ value, onClick }) {
   );
 }
 
+//ランダム要素も入力しときたい
+function random(array) {
+  for (let i = 0; i < array.length; i++) {
+    const rand = Math.floor(Math.random() * 9);
+    //i=0から順にランダムな位置と交換
+    [array[i], array[rand]] = [array[rand], array[i]];
+  }
+  return array;
+}
+
 export default function Board() {
   //初期配置（☆番号じゃなくて画像を表示させたい）
-  const [panels, setPanels] = useState([1, 2, 3, 4, 5, 6, 7, 8, null]);
+  //random要素追加
+  const [panels, setPanels] = useState(() =>
+    random([1, 2, 3, 4, 5, 6, 7, 8, null])
+  );
   const [count, setCount] = useState(0);
 
   const handleClick = (index) => {
