@@ -1,10 +1,19 @@
 import "./styles.css";
 import { useState } from "react";
 
+import puzzle1 from "./puzzle1.png";
+import puzzle2 from "./puzzle2.png";
+import puzzle3 from "./puzzle3.png";
+import puzzle4 from "./puzzle4.png";
+import puzzle5 from "./puzzle5.png";
+import puzzle6 from "./puzzle6.png";
+import puzzle7 from "./puzzle7.png";
+import puzzle8 from "./puzzle8.png";
+
 function Panel({ value, onClick }) {
   return (
     <td className="tile" onClick={onClick}>
-      {value}
+      {value && <img src={value} alt="puzzle picture" />}
     </td>
   );
 }
@@ -23,7 +32,17 @@ export default function Board() {
   //初期配置（☆番号じゃなくて画像を表示させたい）
   //random要素追加
   const [panels, setPanels] = useState(() =>
-    random([1, 2, 3, 4, 5, 6, 7, 8, null])
+    random([
+      puzzle1,
+      puzzle2,
+      puzzle3,
+      puzzle4,
+      puzzle5,
+      puzzle6,
+      puzzle7,
+      puzzle8,
+      null,
+    ])
   );
   const [count, setCount] = useState(0);
 
