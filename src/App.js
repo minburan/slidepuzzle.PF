@@ -68,7 +68,7 @@ export default function Board() {
 
   return (
     <div>
-      <h2>slide pazzle</h2>
+      <h2>slide puzzle</h2>
       <table className="tile-table">
         <tbody>
           <tr className="tile-row">
